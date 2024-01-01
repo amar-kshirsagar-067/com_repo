@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block body_block %}
+<h1> List of All Companies:</h1>
+<ul>
+{% for company in company_list %}
+<hr>
+
+   <li><a href="/{{company.id}}">{{company.name}}</a></li> <!--  company is name of context object of ListView-->
+    {% endfor %}
+    <br>
+    <a class="btn btn-primary" href="/create">Insert Record</a>
+
+    <hr>
+  </ul>
+{% endblock %}
